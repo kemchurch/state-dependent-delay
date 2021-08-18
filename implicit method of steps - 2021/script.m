@@ -104,6 +104,9 @@ for k=1:N_STEPS
     if w>1E-14
         disp(['Fused SOLUTION DERIVATIVE segments contain a gap of size ',num2str(w),'.']);
     end
+    if errflag == 0
+        disp('(Expected; first segment)');
+    end
     % Shift data back
     PHI = shift(SOL,-TAU(end));
     DPHI = shift(SOL_DERIVATIVE,-TAU(end));
